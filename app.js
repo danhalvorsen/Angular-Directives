@@ -8,7 +8,12 @@
        return{
          restrict: "EA",
          templateUrl: "alert.html",
-         transclude: true
+         transclude: true,
+           replace: true,
+           link: function(scope, element, attributes){
+               var type = attributes.type || "info";
+               element.addClass("alert alert-" + type);
+           }
        };
     });
 
